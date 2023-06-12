@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 
-import { Item } from './item'
-import { ItemService } from './item.service'
+import { ApiService } from './api.service'
+import { Movie } from './models/Movie'
 
 @Component({
   selector: 'ns-details',
   templateUrl: './item-detail.component.html',
 })
 export class ItemDetailComponent implements OnInit {
-  item: Item
+  movie: Movie
 
-  constructor(private itemService: ItemService, private route: ActivatedRoute) {}
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.params.id
-    this.item = this.itemService.getItem(id)
+    //this.item = this.apiService.getItem(id)
   }
 }
