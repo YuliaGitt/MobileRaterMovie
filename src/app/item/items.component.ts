@@ -14,10 +14,10 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getMovies().subscribe(
-      data => {
-          this.movies = data; 
+      (data:Movie[]) => {
+        this.movies = data;
       },
-      error => console.log("ERROR!!! : ",error)
+      error => console.log(error)
     )
   }
 }

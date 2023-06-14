@@ -2,6 +2,10 @@
 
 <GridLayout>
   <ListView [items]="movies">
-    
+    <ng-template let-item="item">
+    <StackLayout>
+      <Label [nsRouterLink]="['/item', item.id]" [text]="item.title"></Label>
+    </StackLayout>
+    </ng-template>
   </ListView>
 </GridLayout>
