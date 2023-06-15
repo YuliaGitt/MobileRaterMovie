@@ -10,7 +10,7 @@ import { Movie } from './models/Movie';
   })
 export class ApiService {
 
-baseurl = 'http://192.168.1.1:8000/';
+baseurl = 'http://192.XXX.X.X:8000/';
 baseMovieurl = `${this.baseurl}api/movies/`;
 headers = new HttpHeaders({
   'Content-Type' : 'application/json',
