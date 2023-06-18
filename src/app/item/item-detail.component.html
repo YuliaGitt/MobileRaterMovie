@@ -1,6 +1,7 @@
-<ActionBar title="Details"></ActionBar>
+<ActionBar title="{{movie?.title}}"></ActionBar>
 
 <FlexboxLayout flexDirection="column">
-  <FlexboxLayout class="m-15">
-    
+  <FlexboxLayout class="m-4">
+    <Label class="text-3xl" [text]="movie?.description"></Label>
+  </FlexboxLayout>
 </FlexboxLayout>

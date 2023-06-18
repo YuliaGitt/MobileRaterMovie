@@ -9,11 +9,18 @@ import { Movie } from './models/Movie'
   templateUrl: './item-detail.component.html',
 })
 export class ItemDetailComponent implements OnInit {
-  movie: Movie
+  movie: Movie;
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
+  constructor(private apiService: ApiService,
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    //this.item = this.apiService.getItem(id)
+    const id = this.route.snapshot.params.id;
+    this.apiService.getMovie(id).subscribe(
+      (data:Movie) => {
+        this.movie = data;
+      },
+      error => console.log(error)
+    )
   }
 }

@@ -7,7 +7,7 @@
     "emitDecoratorMetadata": true,
     "noEmitHelpers": true,
     "noEmitOnError": true,
-    "skipLibCheck": true,
+     "skipLibCheck": true,
     "lib": ["ESNext", "dom"],
     "baseUrl": ".",
     "paths": {

@@ -3,8 +3,8 @@
 <GridLayout>
   <ListView [items]="movies">
     <ng-template let-item="item">
-    <StackLayout>
-      <Label [nsRouterLink]="['/item', item.id]" [text]="item.title"></Label>
+      <StackLayout [nsRouterLink]="['/item', item.id]">
+        <Label [text]="item.title" class="text-lg text-gray-500 p-4"></Label>
     </StackLayout>
     </ng-template>
   </ListView>
