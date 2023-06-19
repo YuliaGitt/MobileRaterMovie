@@ -1,7 +1,11 @@
-<ActionBar title="{{movie?.title}}"></ActionBar>
+<ActionBar title="{{movie?.title}}" class="action-bar"></ActionBar>
+  
 
-<FlexboxLayout flexDirection="column">
-  <FlexboxLayout class="m-4">
-    <Label class="text-3xl" [text]="movie?.description"></Label>
-  </FlexboxLayout>
-</FlexboxLayout>
+<StackLayout class="page">
+  <StackLayout orientation="horizontal">
+      <Label text="&#xf005;" class="fas h2"></Label>
+
+  </StackLayout>
+  <Label class="h2" [text]="movie?.description"></Label>
+
+</StackLayout>

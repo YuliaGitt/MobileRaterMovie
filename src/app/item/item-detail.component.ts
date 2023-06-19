@@ -8,13 +8,14 @@ import { Movie } from './models/Movie'
   selector: 'ns-details',
   templateUrl: './item-detail.component.html',
 })
+
 export class ItemDetailComponent implements OnInit {
   movie: Movie;
 
   constructor(private apiService: ApiService,
               private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+    ngOnInit(): void {
     const id = this.route.snapshot.params.id;
     this.apiService.getMovie(id).subscribe(
       (data:Movie) => {
