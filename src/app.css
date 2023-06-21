@@ -19,3 +19,10 @@ Button.-primary {
   font-family: "Font Awesome 5 Free", "fa-solid-900";
   font-weight: 900;
 }
+
+.orange {
+  color: orange;
+}
+.purple {
+  color: rgb(145, 10, 145);
+}
