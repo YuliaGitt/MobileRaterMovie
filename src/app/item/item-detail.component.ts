@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
-
+import { ActivatedRoute, Router } from '@angular/router'
 import { ApiService } from './api.service'
-import { Movie } from './models/Movie'
+import { Movie } from '../models/Movie'
+
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
   selector: 'ns-details',
@@ -14,11 +15,13 @@ export class ItemDetailComponent implements OnInit {
   highlights : number;
 
   constructor(private apiService: ApiService,
-              private route: ActivatedRoute) {}
+              private activatedRoute: ActivatedRoute,
+              private raouteExtantons : RouterExtensions,
+              private router : Router) {}
 
     ngOnInit(): void {
     this.highlights = 0;
-    const id = this.route.snapshot.params.id;
+    const id = this.activatedRoute.snapshot.params.id;
     this.getDetails(id);
   }
 
@@ -39,5 +42,13 @@ export class ItemDetailComponent implements OnInit {
         },
         error => console.log(error)
       )
+    }
+
+    goBack(){
+      this.raouteExtantons.backToPreviousPage()
+    }
+
+    editClicked(){
+      this.router.navigate(["/edit",this.movie.id])
     }
 }

@@ -1,9 +1,7 @@
-<ActionBar title="{{movie?.title}}" class="action-bar">
-  <NavigationButton effectivePaddingRight="30"  icon="font://&#xf044;" class="far h2"></NavigationButton>
+<ActionBar title="{{ movie?.title }}" class="action-bar">
+    <NavigationButton icon="font://&#xf060;" class="fas h2" (tap)="goBack()"></NavigationButton>
+    <ActionItem icon="font://&#xf044;" class="far h2" (tap)="editClicked()"></ActionItem>
 </ActionBar>
-
-  
-
 <StackLayout  >
   <StackLayout orientation="horizontal">
       <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 0}"></Label>

@@ -19,6 +19,7 @@
     "nativescript-fonticon": "^8.0.2",
     "nativescript-ngx-fonticon": "^7.0.0",
     "rxjs": "~7.6.0",
+    "tns-ng": "^1.1.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

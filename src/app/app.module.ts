@@ -7,13 +7,14 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { ItemsComponent } from './item/items.component'
 import { ItemDetailComponent } from './item/item-detail.component'
+import { MovieFormComponent } from './movieForm/movieForm.component'
 
 
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule,
     NativeScriptHttpClientModule,HttpClientModule],
-  declarations: [AppComponent, ItemsComponent, ItemDetailComponent],
+  declarations: [AppComponent, ItemsComponent, ItemDetailComponent,MovieFormComponent],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })

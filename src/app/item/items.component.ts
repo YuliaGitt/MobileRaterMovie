@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 import { ApiService } from './api.service'
-import { Movie } from './models/Movie'
+import { Movie } from '../models/Movie'
 
 @Component({
   selector: 'ns-items',
