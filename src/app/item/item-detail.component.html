@@ -9,9 +9,13 @@
       <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 2}"></Label>
       <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 3}"></Label>
       <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 4}"></Label>
-      <Label text="{{movie?.num_ratings}}" class="h1"></Label>
+      <Label text="({{movie?.num_ratings}})" class="h2"></Label>
   </StackLayout>
-  <Label class="h2" [text]="movie?.description"></Label>
+<StackLayout orientation="horizontal" horizontalAlignment="right" padding="0 10">
+  <Label class="h3" [text]="movie?.description" textWrap="true" style="margin-right: 10;"></Label>
+
+</StackLayout>
+  <Label></Label>
   <Label text="Rate it !!" class="h1"></Label>
   <StackLayout  orientation="horizontal">
     <Label *ngFor="let rate of [1,2,3,4,5]" text="&#xf005;" class="h1"

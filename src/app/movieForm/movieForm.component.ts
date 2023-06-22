@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
+	moduleId: module.id,
 	selector: 'ns-movieForm',
 	templateUrl: './movieForm.component.html',
 	styleUrls: ['./movieForm.component.css']

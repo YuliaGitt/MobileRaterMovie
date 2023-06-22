@@ -24,5 +24,8 @@ Button.-primary {
   color: orange;
 }
 .purple {
-  color: rgb(145, 10, 145);
+  color: rgb(200, 14, 200);
+}
+.lb {
+  margin-right: 10;
 }
