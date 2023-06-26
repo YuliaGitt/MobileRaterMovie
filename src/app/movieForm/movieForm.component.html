@@ -1,3 +1,11 @@
-<ActionBar title="Movie Form" class="action-bar">
-    <NavigationButton icon="font://&#xf060;" class="fas h2" (tap)="goBack()"></NavigationButton>>
+<ActionBar title="{{movieTitle}}" class="action-bar">
+    <NavigationButton icon="font://&#xf060;" class="fas h2" (tap)="goBack()"></NavigationButton>
+    <ActionItem icon="font://&#xf016;" class="far h2" (tap)="cornerIconClicked()"></ActionItem>
 </ActionBar>
+<StackLayout *ngIf="movie">
+    <Label class="h2" text="Title"></Label>
+    <TextField [(ngModel)]="movie.title" ></TextField>
+    <Label  text="Description" ></Label>
+    <TextView [(ngModel)]="movie.description"></TextView>
+    <Button text="Update" (tap)="saveForm()"></Button>
+</StackLayout>

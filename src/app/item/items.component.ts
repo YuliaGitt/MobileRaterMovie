@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 
-import { ApiService } from './api.service'
+import { ApiService } from '../api.service'
 import { Movie } from '../models/Movie'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ns-items',
@@ -10,7 +11,8 @@ import { Movie } from '../models/Movie'
 export class ItemsComponent implements OnInit {
   movies: Array<Movie>;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService : ApiService,
+              private router : Router) {}
 
   ngOnInit(): void {
     this.apiService.getMovies().subscribe(
@@ -19,5 +21,9 @@ export class ItemsComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  newMovie(){
+    this.router.navigate(['/edit', -1])
   }
 }

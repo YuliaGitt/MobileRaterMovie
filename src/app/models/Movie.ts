@@ -1,7 +1,7 @@
 export interface Movie{
-    id: number;
+    id?: number;
     title : string;
     description : string;
-    avg_ratings : number;
-    num_ratings  : number;
+    avg_ratings? : number;
+    num_ratings?  : number;
 };
