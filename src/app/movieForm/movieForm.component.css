@@ -1,2 +1,19 @@
-.movieForm {
+.delete-button {
+    background-color: rgb(190, 23, 23);
+    border-color: rgb(0, 0, 0);
+    border-radius: 20;
+    border-width: 1;
+    color: whitesmoke;
+    font-size: 18;
+    font-weight: bold;
 }
+.update-button {
+    background-color: rgb(23, 98, 190);
+    border-color: rgb(0, 0, 0);
+    border-radius: 20;
+    border-width: 1;
+    color: whitesmoke;
+    font-size: 18;
+    font-weight: bold;
+}
+

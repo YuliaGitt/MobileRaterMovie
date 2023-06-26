@@ -7,5 +7,7 @@
     <TextField [(ngModel)]="movie.title" ></TextField>
     <Label  text="Description" ></Label>
     <TextView [(ngModel)]="movie.description"></TextView>
-    <Button text="Update" (tap)="saveForm()"></Button>
+    <Button class="update-button" text="{{movie.id ? 'Update' : 'Create'}}" (tap)="saveForm()"></Button>
+    <Button  text="Delete" class="delete-button" (tap)="deleteMovie()"></Button>
 </StackLayout>
+

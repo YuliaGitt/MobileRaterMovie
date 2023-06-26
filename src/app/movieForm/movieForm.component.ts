@@ -55,7 +55,15 @@ export class MovieFormComponent implements OnInit {
 					error => console.log(error)
 				)
 		}
-		
+	}
+
+	deleteMovie(){
+		this.apiService.deleteMovie(this.movie.id).subscribe(
+			data => {
+				this.router.navigate(['/items'])
+			},
+			error => console.log(error)
+		)
 	}
 
 	getDetails(id : number){
