@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Movie } from './models/Movie';
+import { Auth } from './models/Auth';
+import { getString } from '@nativescript/core/application-settings';
 
 
 @Injectable({
@@ -46,7 +48,7 @@ headers = new HttpHeaders({
     return this.httpClient.post(`${this.baseMovieurl}${movieId}/rate_movie/`,body, {headers : this.getAuthHeaders()});
   }
 
-  loginUser(authData){
+  loginUser(authData : Auth){
     const body = JSON.stringify(authData);
     return this.httpClient.post(`${this.baseurl}auth/`,body, {headers : this.headers});
   }
@@ -57,11 +59,11 @@ headers = new HttpHeaders({
   }
 
   getAuthHeaders() {
-    const token = '56ea183db519b7cc139b7476425a7de3fec65af3';
+    const token = getString("mr-token");
     return new HttpHeaders({
       'Content-Type' : 'application/json',
       Authorization : `token ${token}`
-  })
+  });
   }
 }
 

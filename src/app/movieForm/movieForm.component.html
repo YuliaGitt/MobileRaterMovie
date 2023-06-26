@@ -8,6 +8,6 @@
     <Label  text="Description" ></Label>
     <TextView [(ngModel)]="movie.description"></TextView>
     <Button class="update-button" text="{{movie.id ? 'Update' : 'Create'}}" (tap)="saveForm()"></Button>
-    <Button  text="Delete" class="delete-button" (tap)="deleteMovie()"></Button>
+    <Button *ngIf="id" text="Delete" class="delete-button" (tap)="deleteMovie()"></Button>
 </StackLayout>
 

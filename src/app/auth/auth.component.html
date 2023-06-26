@@ -1,8 +1,8 @@
 <StackLayout=>
     <Label class="h3" text="Username"></Label>
-    <TextField [(ngModel)]="auth.username" ></TextField>
+    <TextField [(ngModel)]="auth.username" autocapitalizationType="none"></TextField>
     <Label class="h3" text="Password" ></Label>
-    <TextField [(ngModel)]="auth.password" secure="true"></TextField>
-    <Button class="update-button" text="Login"></Button>
+    <TextField [(ngModel)]="auth.password" secure="true" ></TextField>
+    <Button class="update-button" text="Login" (tap)="login()"></Button>
 </StackLayout>
 
