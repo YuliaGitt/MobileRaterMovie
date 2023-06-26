@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {Auth} from '../models/Auth'
+
 @Component({
 	moduleId: module.id,
 	selector: 'auth',
@@ -8,8 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AuthComponent implements OnInit {
+	public auth : Auth;
 
 	constructor() { }
 
-	ngOnInit() { }
+	ngOnInit() { 
+		this.auth = {username : "", password : ""};
+	}
 }

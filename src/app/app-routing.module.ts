@@ -5,12 +5,15 @@ import { NativeScriptRouterModule } from '@nativescript/angular'
 import { ItemsComponent } from './item/items.component'
 import { ItemDetailComponent } from './item/item-detail.component'
 import { MovieFormComponent } from './movieForm/movieForm.component'
+import { AuthComponent } from './auth/auth.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/items', pathMatch: 'full' },
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  { path: 'auth', component: AuthComponent },
   { path: 'items', component: ItemsComponent },
   { path: 'item/:id', component: ItemDetailComponent },
-  { path: 'edit/:id', component: MovieFormComponent }
+  { path: 'edit/:id', component: MovieFormComponent },
+
 ]
 
 @NgModule({
