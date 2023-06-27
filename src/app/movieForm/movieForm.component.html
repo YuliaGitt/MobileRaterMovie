@@ -1,13 +1,12 @@
-<ActionBar title="{{movieTitle}}" class="action-bar">
+<ActionBar title="{{movieTitle}}" class="actionBar">
     <NavigationButton icon="font://&#xf060;" class="fas h2" (tap)="goBack()"></NavigationButton>
-    <ActionItem icon="font://&#xf016;" class="far h2" (tap)="cornerIconClicked()"></ActionItem>
 </ActionBar>
-<StackLayout *ngIf="movie">
-    <Label class="h2" text="Title"></Label>
-    <TextField [(ngModel)]="movie.title" ></TextField>
+<StackLayout *ngIf="movie" class="page">
+    <Label class="Label" text="Title"></Label>
+    <TextField class="textField" [(ngModel)]="movie.title" ></TextField>
     <Label  text="Description" ></Label>
-    <TextView [(ngModel)]="movie.description"></TextView>
-    <Button class="update-button" text="{{movie.id ? 'Update' : 'Create'}}" (tap)="saveForm()"></Button>
-    <Button *ngIf="id" text="Delete" class="delete-button" (tap)="deleteMovie()"></Button>
+    <TextView class="textField" [(ngModel)]="movie.description"></TextView>
+    <Button class="button" text="{{movie.id ? 'Update' : 'Create'}}" (tap)="saveForm()"></Button>
+    <Button *ngIf="movie.id" text="Delete" class="deleteButton" (tap)="deleteMovie()"></Button>
 </StackLayout>
 

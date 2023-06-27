@@ -1,8 +1,8 @@
-<ActionBar title="Movie Rater"> 
+<ActionBar title="Movie Rater" class="actionBar"> 
   <ActionItem icon="font://&#xf2f5;" class="fas h2" (tap)="logout()"></ActionItem>
 </ActionBar>
 
-<GridLayout>
+<StackLayout class="page">
   <ListView [items]="movies">
     <ng-template let-item="item">
       <StackLayout [nsRouterLink]="['/item', item.id]"> 
@@ -10,5 +10,6 @@
     </StackLayout>
     </ng-template>
   </ListView>
-  <Button text="Mew Movie" (tap)="newMovie()"></Button>
-</GridLayout>
+  <Button class="button" text="Mew Movie" (tap)="newMovie()"></Button>
+  <Image src="~/app/MR_logo.png" strech="aspectFit"></Image>
+</StackLayout>

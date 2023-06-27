@@ -1,26 +1,25 @@
-<ActionBar title="{{ movie?.title }}" class="action-bar">
+<ActionBar title="{{ movie?.title }}" class="actionBar">
     <NavigationButton icon="font://&#xf060;" class="fas h2" (tap)="goBack()"></NavigationButton>
     <ActionItem icon="font://&#xf044;" class="far h2" (tap)="editClicked()"></ActionItem>
 </ActionBar>
-<StackLayout  >
+<StackLayout  class="page">
   <StackLayout orientation="horizontal">
-      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 0}"></Label>
-      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 1}"></Label>
-      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 2}"></Label>
-      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 3}"></Label>
-      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 4}"></Label>
-      <Label text="({{movie?.num_ratings}})" class="h2"></Label>
+      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 0 , 'white' :  movie?.avg_ratings <= 0 }"></Label>
+      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 1 ,'white' :  movie?.avg_ratings <= 1 }"></Label>
+      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 2, 'white' :  movie?.avg_ratings <= 2 }"></Label>
+      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 3, 'white' :  movie?.avg_ratings <= 3 }"></Label>
+      <Label text="&#xf005;" class="fas h2" [ngClass]="{'orange' : movie?.avg_ratings > 4, 'white' :  movie?.avg_ratings <= 4 }"></Label>
+      <Label class="Label" text="({{movie?.num_ratings}})"></Label>
   </StackLayout>
 <StackLayout orientation="horizontal" horizontalAlignment="left" padding="0 10">
-  <Label class="h3" [text]="movie?.description" textWrap="true" style="margin-right: 10;"></Label>
-
+  <Label class="Label" [text]="movie?.description" textWrap="true" style="margin-right: 10;"></Label>
 </StackLayout>
   <Label></Label>
-  <Label text="Rate it !!" class="h1"></Label>
+  <Label text="Rate it !!" class="Label"></Label>
   <StackLayout  orientation="horizontal">
-    <Label *ngFor="let rate of [1,2,3,4,5]" text="&#xf005;" class="h1"
-    [ngClass]="{'fas purple': highlights >= rate, 'far' : highlights < rate}"
+    <Label *ngFor="let rate of [1,2,3,4,5]" text="&#xf005;" class="h2"
+    [ngClass]="{'fas purple': highlights >= rate, 'far white' : highlights < rate }"
     (tap)="setHighlight(rate)"></Label>
   </StackLayout>
-  <Button text="Rate" (tap)="rateClicked()"></Button>
+  <Button text="Rate" (tap)="rateClicked()" class="button"></Button>
 </StackLayout>

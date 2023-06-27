@@ -1,10 +1,6 @@
 @import '@nativescript/theme/css/core.css';
 @import '@nativescript/theme/css/default.css';
 
-
-Button.-primary {
-  font-size: 18;
-}
 .far {
   font-family: "Font Awesome 5 Free", "fa-regular-400";
   font-weight: 400;
@@ -23,9 +19,49 @@ Button.-primary {
 .orange {
   color: orange;
 }
+
 .purple {
   color: rgb(200, 14, 200);
 }
-.lb {
-  margin-right: 10;
+
+.page {
+  background-color:  #282c34;
+  color:#ffffff;
+  padding: 20;
+  font-size: 18;
+}
+
+.Label {
+  background-color:  #282c34;
+  font:  #ffffff;
+  font-size: 20;
+}
+
+.textField {
+  color:  #ffffff;
+  background-color:  #282c34
+}
+
+.button {
+   background-color: #ffa500 ;
+   color: #282c34;
+   font-size: 17;
+   font-weight: bolder;
+}
+
+.actionBar {
+  background-color: #ffa500;
+  color: #282c34;
+}
+
+.deleteButton {
+  background-color: #ff1111 ;
+  color: #282c34;
+  font-size: 17;
+  font-weight: bolder;
+}
+
+.white {
+  color:  #ffffff;
+  size: 20;
 }

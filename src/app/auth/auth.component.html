@@ -1,10 +1,13 @@
-<StackLayout=>
-    <Label class="h3" text="Username"></Label>
-    <TextField [(ngModel)]="auth.username" autocapitalizationType="none"></TextField>
-    <Label class="h3" text="Password" ></Label>
-    <TextField [(ngModel)]="auth.password" secure="true" ></TextField>
-    <Button  class="update-button" text="{{registerMode ? 'Register' : 'Login'}}" (tap)="submitForm()"></Button>
-    <Label text="Don't have an account ? Register Here" (tap)="registerMode = true" *ngIf="!registerMode"></Label>
-    <Label text="Do you have an account ? Login Here" (tap)="registerMode = false" *ngIf="registerMode"></Label>
+<ActionBar title="Movie Rater" class="actionBar"></ActionBar>  
+<StackLayout class="page">
+    <Image src="~/app/MR_logo.png" strech="aspectFit"></Image>
+    <Label class="Label" text="Username"></Label>
+    <TextField [(ngModel)]="auth.username" autocapitalizationType="none" class="textField"></TextField>
+    <Label class="Label" text="Password" ></Label>
+    <TextField [(ngModel)]="auth.password" secure="true" class="textField"></TextField>
+    <Button  class="button" text="{{registerMode ? 'Register' : 'Login'}}" (tap)="submitForm()"></Button>
+    <Label></Label>
+    <Label class="Label" text="Don't have an account ? Register Here" (tap)="registerMode = true" *ngIf="!registerMode"></Label>
+    <Label class="Label" text="Do you have an account ? Login Here" (tap)="registerMode = false" *ngIf="registerMode"></Label>
 </StackLayout>
 
