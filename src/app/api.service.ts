@@ -19,7 +19,6 @@ headers = new HttpHeaders({
 })
 
   constructor(private httpClient : HttpClient){}
-    // private cookieServise: CookieService 
 
   getMovies(){
     return this.httpClient.get<Movie[]>(this.baseMovieurl, {headers : this.getAuthHeaders()});

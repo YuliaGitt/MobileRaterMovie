@@ -19,7 +19,8 @@ export class AuthComponent implements OnInit {
 				private router : Router) { }
 
 	ngOnInit() { 
-		if ("mr-token"){
+		const myToken = getString("mr-token");
+		if (myToken) {
 			this.router.navigate(['/items']);
 		} else {
 			this.auth = {username : "", password : ""};
