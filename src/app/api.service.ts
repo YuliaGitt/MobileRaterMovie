@@ -52,7 +52,7 @@ headers = new HttpHeaders({
     return this.httpClient.post(`${this.baseurl}auth/`,body, {headers : this.headers});
   }
 
-  registerUser(authData){
+  registerUser(authData : Auth){
     const body = JSON.stringify(authData);
     return this.httpClient.post(`${this.baseurl}api/user/`,body, {headers : this.headers});
   }
