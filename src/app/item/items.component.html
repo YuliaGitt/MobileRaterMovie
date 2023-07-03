@@ -2,14 +2,15 @@
   <ActionItem icon="font://&#xf2f5;" class="fas h2" (tap)="logout()"></ActionItem>
 </ActionBar>
 
-<StackLayout class="page">
-  <ListView [items]="movies">
+<StackLayout class="page" >
+  <ListView [items]="movies" height="500">
     <ng-template let-item="item">
       <StackLayout [nsRouterLink]="['/item', item.id]"> 
         <Label [text]="item.title"></Label>
     </StackLayout>
     </ng-template>
   </ListView>
+
   <Button class="button" text="Mew Movie" (tap)="newMovie()"></Button>
   <Image src="~/app/MR_logo.png" strech="aspectFit"></Image>
 </StackLayout>

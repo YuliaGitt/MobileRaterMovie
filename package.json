@@ -15,6 +15,7 @@
     "@nativescript/angular": "^15.0.0",
     "@nativescript/core": "~8.5.0",
     "@nativescript/theme": "~3.0.2",
+    "@nstudio/nativescript-snackbar": "^2.1.0",
     "nativescript-fontawesome": "^1.0.0",
     "nativescript-fonticon": "^8.0.2",
     "nativescript-ngx-fonticon": "^7.0.0",

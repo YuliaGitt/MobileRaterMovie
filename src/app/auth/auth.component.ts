@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {Auth} from '../models/Auth'
 import { ApiService } from '../api.service';
-import { Router } from '@angular/router';
 import { setString, getString } from '@nativescript/core/application-settings';
+import { SnackBar, SnackBarOptions } from "@nstudio/nativescript-snackbar";
+import { backgroundColorProperty } from '@nativescript/core';
 
 @Component({
 	moduleId: module.id,
@@ -34,8 +36,10 @@ export class AuthComponent implements OnInit {
 			this.apiService.registerUser(this.auth).subscribe(
 				(data : any) => {
 					this.loginFunction();
-				},
-				error => console.log(error)
+				},error => {
+					const snackbar = new SnackBar()
+					snackbar.simple(`The username has already been allocated to another user`)
+					}
 			)
 		} else {
 			this.loginFunction();
@@ -47,8 +51,10 @@ export class AuthComponent implements OnInit {
 			(data : any) => {
 				setString("mr-token" , data.token);
 				this.router.navigate(['/items']);
-			},
-			error => console.log(error)
+			}, error => {
+			const snackbar = new SnackBar()
+			snackbar.simple(`Looks like either your email address or password were incorrect. Wanna try again?`)
+			}
 		)
 	}
 }

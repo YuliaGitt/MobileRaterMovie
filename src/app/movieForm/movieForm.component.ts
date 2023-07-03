@@ -3,6 +3,7 @@ import { RouterExtensions } from '@nativescript/angular';
 import { Movie } from '../models/Movie';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SnackBar, SnackBarOptions } from "@nstudio/nativescript-snackbar";
 
 @Component({
 	moduleId: module.id,
@@ -32,10 +33,6 @@ export class MovieFormComponent implements OnInit {
 	goBack(){
 		this.routerExtemtions.backToPreviousPage()
 	}
-
-	cornerIconClicked(){
-		//this.router.navigate(["/edit",this.movie.id])
-	  }
 	
 	saveForm(){
 		if (this.movie.id){
@@ -43,16 +40,20 @@ export class MovieFormComponent implements OnInit {
 				this.movie.description).subscribe(
 					data =>{
 						this.router.navigate(['/items'])
-					},
-					error => console.log(error)
+					}, error => {
+						const snackbar = new SnackBar()
+						snackbar.simple(`The title and description are required`)
+					}
 				)
 		} else {
 			this.apiService.createMovie(this.movie.title,
 				this.movie.description).subscribe(
 					data =>{
 						this.router.navigate(['/items'])
-					},
-					error => console.log(error)
+					},error => {
+						const snackbar = new SnackBar()
+						snackbar.simple(`The title and description are required`)
+					}
 				)
 		}
 	}
